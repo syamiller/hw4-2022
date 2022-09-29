@@ -133,7 +133,6 @@ header nav ul li a:hover, header nav ul li a:focus {
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  box-sizing: border-box;
   row-gap: 15px;
   overflow: auto;
 }
@@ -183,9 +182,9 @@ first div in the grid  and place it in the grid. */
 }
  /* Step 8: Write the selector/rule property to style the .text-block class. */
 .text-block {
-  align-content: center;
   text-align: center;
-  box-sizing: content-box;
+  justify-content: center;
+  margin: auto;
 }
 
 /* Add your media query here */

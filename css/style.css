@@ -107,7 +107,7 @@ footer{
 
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
-nav ul li a:hover, nav ul li a:focus {
+header nav ul li a:hover, header nav ul li a:focus {
   text-decoration: underline;
 }
 
@@ -118,7 +118,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
-.skip a:focus {
+.skip header nav ul li a:focus {
   position: absolute;
   top: 40px;
 }
@@ -133,6 +133,7 @@ nav ul li a:hover, nav ul li a:focus {
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
+  box-sizing: border-box;
   row-gap: 15px;
   overflow: auto;
 }
@@ -184,10 +185,39 @@ first div in the grid  and place it in the grid. */
 .text-block {
   align-content: center;
   text-align: center;
+  box-sizing: content-box;
 }
 
 /* Add your media query here */
+@media all and (min-width: 800px) {
+  nav {
+    text-align: right;
+    padding: 30px 0px;
+  }
 
+  .container {
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
+
+  .container div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .about, .clients, .method-image, .contact-image {
+    grid-column: 3 / span 2;
+  }
+
+  .method, .contact, .about-image, .clients-image {
+    grid-column: 2 / span 2;
+  }
+
+
+  .text-block {
+    max-height: 250px;
+    overflow: auto;
+  }
+}
 
   /* Step 9: Write the selector/rule property to style the nav element */
 
